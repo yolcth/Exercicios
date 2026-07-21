@@ -35,7 +35,7 @@ def retirar_dinheiro(saldo_inicial):
     retirar = float(input('Quantos R$ você deseja retirar da sua poupança? R$'))
     return retirar
 
-def transferencia(saldo_inicial, nome):
+def transferencia(saldo_inicial):
     print(f'Para realizar uma transferência, você tem que estar ciente do seu saldo atual. Sendo ele de: {saldo_inicial}R$\n')
     transferencia = float(input('Primeiro digite a quantia da transferência e se o valor for válido iremos continuar: R$'))
 
@@ -44,7 +44,7 @@ def transferencia(saldo_inicial, nome):
 
     else:
         if saldo_inicial >= transferencia:
-            pix = input(f'Tudo certo, {nome}, agora você precisa digitar o nome completo da pessoa que deseja transferir a quantia de {transferencia}: ')
+            pix = input(f'Tudo certo, agora você precisa digitar o nome completo da pessoa que deseja transferir a quantia de {transferencia}: ')
             saldo_inicial -= transferencia
             sleep(0.5)
             print('\nCarregando e fazendo a transferência..\n'); sleep(0.5)

@@ -3,12 +3,18 @@
         "nome": "Matheus",
         "idade": 20,
         "senha": "1101",
-        "saldo": 150.0
+        "saldo": 100.0
     },
     {
         "nome": "Vinicius",
         "idade": 19,
         "senha": "helloprint",
         "saldo": 150.0
+    },
+    {
+        "nome": "Daniel",
+        "idade": 21,
+        "senha": "pump",
+        "saldo": 30.0
     }
 ]
