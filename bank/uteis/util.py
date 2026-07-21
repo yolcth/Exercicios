@@ -1,0 +1,53 @@
+from time import sleep
+
+def menu():
+    print(f'--=--=--' * 4)
+    print(f'{'Banco Digital':^32}')
+    print(f'--=--=--' * 4)
+
+
+def options():
+    menu = [
+        
+        '1 - Ver Saldo na conta',
+        '2 - Depositar dinheiro na conta',
+        '3 - Retirar dinheiro da conta',
+        '4 - Realizar uma transferência',
+        '5 - Sair'
+        
+    ]
+    for i in menu:
+        print(i)
+
+
+def ver_saldo(saldo_inicial):
+    print(f'O seu saldo atual é de {saldo_inicial}')
+    print('Prossiga: ')
+    
+
+def depositar_dinheiro(saldo_inicial):
+    deposito = float(input('Qual é o valor que você deseja depositar para a sua conta? R$'))
+    return deposito
+                    
+
+def retirar_dinheiro(saldo_inicial):
+    print(f'Para retirar dinheiro da conta, você tem que estar ciente do seu saldo atual. Sendo ele de: {saldo_inicial}R$.\n')
+    retirar = float(input('Quantos R$ você deseja retirar da sua poupança? R$'))
+    return retirar
+
+def transferencia(saldo_inicial, nome):
+    print(f'Para realizar uma transferência, você tem que estar ciente do seu saldo atual. Sendo ele de: {saldo_inicial}R$\n')
+    transferencia = float(input('Primeiro digite a quantia da transferência e se o valor for válido iremos continuar: R$'))
+
+    if transferencia > saldo_inicial:
+        print('Operação inválida, você tentou transferir mais dinheiro do que tem atualmente. Tente novamente. \n')
+
+    else:
+        if saldo_inicial >= transferencia:
+            pix = input(f'Tudo certo, {nome}, agora você precisa digitar o nome completo da pessoa que deseja transferir a quantia de {transferencia}: ')
+            saldo_inicial -= transferencia
+            sleep(0.5)
+            print('\nCarregando e fazendo a transferência..\n'); sleep(0.5)
+            print('...'); sleep(0.5)
+            print(f'Pronto! transferência realizada para {pix} com sucesso! Seu saldo atual é de {saldo_inicial}. \n')
+    return saldo_inicial

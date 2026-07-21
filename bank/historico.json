@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Matheus",
+        "idade": 20,
+        "senha": "1101",
+        "saldo": 150.0
+    },
+    {
+        "nome": "Vinicius",
+        "idade": 19,
+        "senha": "helloprint",
+        "saldo": 150.0
+    }
+]

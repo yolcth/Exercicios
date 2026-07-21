@@ -1,0 +1,24 @@
+import json; from uteis import interface
+
+def cadastrar(arquivo, nome, idade, senha):
+        interface.texto('Seu Cadastro')
+        saldo = 0 
+        with open(arquivo, 'r') as a:
+            dados = json.load(a)
+
+        novo_cliente = {'nome': nome, 'idade': idade, 'senha': senha, 'saldo': saldo}
+        dados.append(novo_cliente)
+
+        with open(arquivo, 'w') as a:
+            json.dump(dados, a, indent=4)
+
+def login(arquivo, nome, senha):
+        with open(arquivo, 'r') as a:
+            dados = json.load(a)
+            for conta in dados:
+                if conta['nome'] == nome and conta['senha'] == senha:
+                    print('você esta cadastrado!')
+                    login = True
+                    return conta, login
+            return False
+        

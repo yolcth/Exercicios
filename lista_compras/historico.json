@@ -1,0 +1,38 @@
+[
+    {
+        "nome": "ma\u00e7a",
+        "quantidade": 5
+    },
+    {
+        "nome": "leite ninho",
+        "quantidade": 1
+    },
+    {
+        "nome": "p\u00e3o",
+        "quantidade": 5
+    },
+    {
+        "nome": "abobora",
+        "quantidade": 2
+    },
+    {
+        "nome": "coca cola",
+        "quantidade": 1
+    },
+    {
+        "nome": "coca cola",
+        "quantidade": 2
+    },
+    {
+        "nome": "morango",
+        "quantidade": 12
+    },
+    {
+        "nome": "banana",
+        "quantidade": 16
+    },
+    {
+        "nome": "chocolate",
+        "quantidade": 12
+    }
+]
