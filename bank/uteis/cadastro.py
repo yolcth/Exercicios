@@ -19,6 +19,8 @@ def login(arquivo, nome, senha):
             for conta in dados:
                 if conta['nome'] == nome and conta['senha'] == senha:
                     print('você esta cadastrado!')
+                    interface.texto('Logado Na Conta Com Sucesso.')
+                    print(f'Seja bem vindo(a) ao nosso sistema de banco, fizemos o melhor para que o usuário possa ter uma ótima experiência!\n')
                     login = True
                     return conta, login
             return False

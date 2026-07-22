@@ -4,6 +4,7 @@ def menu():
     print(f'--=--=--' * 4)
     print(f'{'Banco Digital':^32}')
     print(f'--=--=--' * 4)
+    print()
 
 
 def options():
@@ -19,18 +20,20 @@ def options():
 
 
 def ver_saldo(saldo_inicial):
-    print(f'O seu saldo atual é de {saldo_inicial}')
-    print('Prossiga: ')
+    print(f'O seu saldo atual é de \033[32m{saldo_inicial}\033[m')
+    print('Prossiga: \n')
     
 
 def depositar_dinheiro(saldo_inicial):
     deposito = float(input('Qual é o valor que você deseja depositar para a sua conta? R$'))
+    sleep(0.5); print('Depositando..'); sleep(0.5); print('Tudo certo! Novo saldo atualizado.\n')
     return deposito
                     
 
 def retirar_dinheiro(saldo_inicial):
-    print(f'Para retirar dinheiro da conta, você tem que estar ciente do seu saldo atual. Sendo ele de: {saldo_inicial}R$.\n')
+    print(f'Para retirar dinheiro da conta, você tem que estar ciente do seu saldo atual. Sendo ele de: \033[32m{saldo_inicial}R$.\033[m\n')
     retirar = float(input('Quantos R$ você deseja retirar da sua poupança? R$'))
+    sleep(0.5); print('Retirando..'); sleep(0.5); print('Tudo certo! Novo saldo atualizado.\n')
     return retirar
 
 def transferencia(saldo_inicial):
@@ -44,7 +47,7 @@ def transferencia(saldo_inicial):
     pix = input(f'Tudo certo, agora você precisa digitar o nome completo da pessoa que deseja transferir a quantia de {valor}: ')
     novo_saldo = saldo_inicial - valor
     sleep(0.5)
-    print('\nCarregando e fazendo a transferência..\n'); sleep(0.5)
+    print('\nCarregando e fazendo a transferência..'); sleep(0.5)
     print('...'); sleep(0.5)
-    print(f'Pronto! transferência realizada para {pix} com sucesso! Seu saldo atual é de {saldo_inicial}. \n')
+    print(f'Pronto! transferência realizada para {pix} com sucesso! O seu saldo foi atualizado!. \n')
     return novo_saldo

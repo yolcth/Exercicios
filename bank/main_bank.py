@@ -20,6 +20,7 @@ while True:
 
     if situacao == 2:
         try:
+            interface.texto('Seu Cadastro')
             nome = str(input('Digite o seu nome: '))
             idade = int(input('Digite a sua idade: '))
         except (ValueError, NameError):
@@ -52,7 +53,6 @@ while True:
             continue
 
         if logado == True:
-            print(f'Seja bem vindo(a) ao nosso sistema de banco, fizemos o melhor para que o usuário possa ter uma ótima experiência!\n')
             while True:
                 util.options()
                 sleep(0.5)
