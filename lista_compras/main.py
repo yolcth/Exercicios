@@ -1,4 +1,4 @@
-import uteis; from interface import inter; from time import sleep
+from interface import uteis, inter; from time import sleep
 
 arquivo = 'python/projects/lista_compras/historico.json'
 inter.cabecalho('Sistema de Lista de Compras.')
@@ -27,7 +27,7 @@ while True:
         try:
             produto = str(input('Nome do produto: '))
             quantidade = int(input('Quantidade: '))
-        except NameError:
+        except (NameError, ValueError):
             print('\033[0;31mNúmero inválido. Tente novamente.\033[m')
             continue
         uteis.cadastrar(arquivo, produto, quantidade)
