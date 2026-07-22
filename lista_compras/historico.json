@@ -34,5 +34,9 @@
     {
         "nome": "chocolate",
         "quantidade": 12
+    },
+    {
+        "nome": "salgadinho",
+        "quantidade": 4
     }
 ]
