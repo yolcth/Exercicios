@@ -1,6 +1,6 @@
 from interface import uteis, inter; from time import sleep
 
-arquivo = 'python/projects/lista_compras/historico.json'
+arquivo = 'python/projects/lista_compras/json/historico.json'
 inter.cabecalho('Sistema de Lista de Compras.')
 print()
 

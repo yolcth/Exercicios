@@ -1,5 +1,5 @@
 import json; from utilidades import uteis
-arquivo = 'python/projects/sistema_notas/notas.json'
+arquivo = 'python/projects/sistema_notas/json/notas.json'
 
 lista = [
     '1 - Ver Alunos',

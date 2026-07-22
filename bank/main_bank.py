@@ -2,7 +2,7 @@ from uteis import util; from time import sleep
 from uteis import cadastro; from uteis import interface
 import json
 
-arquivo = 'python/projects/bank/historico.json'
+arquivo = 'python/projects/bank/json/historico.json'
 util.menu()
 while True:
     lista = [
