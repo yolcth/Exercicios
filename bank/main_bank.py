@@ -3,10 +3,7 @@ from uteis import cadastro; from uteis import interface
 import json
 
 arquivo = 'python/projects/bank/historico.json'
-
 util.menu()
-
-
 while True:
     lista = [
         '1 - Sou cadastrado, quero fazer o Login',
@@ -20,6 +17,7 @@ while True:
     except ValueError:
         print('\033[31mErro: Usuário digitou fora dos parametrôs pedidos.\033[m') 
         continue  
+
     if situacao == 2:
         try:
             nome = str(input('Digite o seu nome: '))
@@ -32,9 +30,11 @@ while True:
             break
         senha = str(input('Digite a sua senha: '))
         cadastro.cadastrar(arquivo, nome, idade, senha) # passando todos os parametros
+
     elif situacao == 3:
         print('Até logo.')
         break
+
     if situacao == 1:
         interface.texto('Seu Login')
         usuario = str(input('Digite o seu nome: '))
@@ -50,6 +50,7 @@ while True:
         except json.JSONDecodeError:
             print('\033[31mErro: o arquivo de histórico está corrompido ou mal formatado.\033[m')
             continue
+
         if logado == True:
             print(f'Seja bem vindo(a) ao nosso sistema de banco, fizemos o melhor para que o usuário possa ter uma ótima experiência!\n')
             while True:
@@ -61,6 +62,7 @@ while True:
                 except ValueError:
                     print('\033[31mErro: Usuário digitou fora dos parametrôs pedidos.\033[m') 
                     continue
+
                 if escolha == 5:
                     print('Muito obrigado por usar o nosso sistema bancário! Volte sempre!\n')
                     exit()
@@ -86,25 +88,24 @@ while True:
 
                 elif escolha == 3:
                     retirar = util.retirar_dinheiro(conta['saldo'])
-                    conta['saldo'] -= retirar # o saldo da conta vai ser o saldo menos o valor retirado
-                    
                     if retirar > conta['saldo']:
-                            print('Erro, Não dá para retirar esse valor.')
-                
-                    else:
-                        try:
-                            with open(arquivo, 'r') as a:
-                                dados = json.load(a) 
-                            for usuario_dados in dados:
-                                if usuario_dados['nome'] == conta['nome']:
-                                    usuario_dados['saldo'] -= retirar
-                            with open(arquivo, 'w') as a:
-                                json.dump(dados, a, indent=4)
-                            sleep(0.5)   
-                        except FileNotFoundError:
-                            print('\033[31mErro: O arquivo de histórico não foi encontrado.\033[m')
-                        except json.JSONDecodeError:
-                            print('\033[31mErro: O arquivo de histórico está corrompido ou mal formatado.\033[m')
+                            print('Erro, Não dá para retirar esse valor.') 
+                            continue
+                    
+                    conta['saldo'] -= retirar # o saldo da conta vai ser o saldo menos o valor retirado
+                    try:
+                        with open(arquivo, 'r') as a:
+                            dados = json.load(a) 
+                        for usuario_dados in dados:
+                            if usuario_dados['nome'] == conta['nome']:
+                                usuario_dados['saldo'] -= retirar
+                        with open(arquivo, 'w') as a:
+                            json.dump(dados, a, indent=4)
+                        sleep(0.5)   
+                    except FileNotFoundError:
+                        print('\033[31mErro: O arquivo de histórico não foi encontrado.\033[m')
+                    except json.JSONDecodeError:
+                        print('\033[31mErro: O arquivo de histórico está corrompido ou mal formatado.\033[m')
 
                 elif escolha == 4:
                     novo_saldo = util.transferencia(conta['saldo'])
