@@ -13,19 +13,27 @@ def exibir_escolha():
         ]
     for indice in contas:
         print(indice)
-    
 
 while True:
             exibir_escolha()
-            
-            conta = int(input('\nQual operação você deseja realizar? (1/7): '))
+            try:
+                conta = int(input('\nQual operação você deseja realizar? (1/7): '))
+            except ValueError:
+                print('Erro. Escolha apenas alguma das opções possíveis.')
+                print()
+                continue
+
             if conta == 7:
                 print('\nAté a próxima! \n')
                 break
 
-            n1 = float(input('Digite o primeiro número: '))
-            n2 = float(input('Digite o segundo número: '))
-            print()
+            try:
+                n1 = float(input('Digite o primeiro número: '))
+                n2 = float(input('Digite o segundo número: '))
+                print()
+            except ValueError:
+                print('Número inválido. Tente novamente.')
+                continue
 
             if conta == 1:
                 print(f'O resultado é de {n1 + n2:.2f}\n')
@@ -34,7 +42,6 @@ while True:
                 print(f'O resultado é de {n1 - n2:.2f}\n')
 
             elif conta == 3:
-
                 if n2 == 0:
                     print('Erro: Divisão por zero.\n')
                 else:
