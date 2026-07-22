@@ -2,7 +2,6 @@
 
 Um sistema interativo em linha de comando (CLI) para gerenciamento e registro de lista de compras, com armazenamento dos dados em arquivo JSON.
 
----
 
 ## 📌 Funcionalidades
 
@@ -11,14 +10,11 @@ Um sistema interativo em linha de comando (CLI) para gerenciamento e registro de
 * 💾 **Persistência de Dados:** Salva automaticamente as informações no arquivo `historico.json`.
 * ⚠️ **Tratamento de Erros:** Validação para entradas inválidas do usuário.
 
----
 
 ## 🛠️ Tecnologias Utilizadas
 
 * **Python 3**
 * **JSON** (para persistência de dados)
-
----
 
 ## 🚀 Como Executar
 

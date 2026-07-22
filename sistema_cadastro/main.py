@@ -1,7 +1,7 @@
 from interface import interface; from time import sleep; import json
 from file import arquivo
 
-arq = 'python/projects.py/sistema-cadastro/cadastros.json'
+arq = 'python/projects/sistema_cadastro/cadastros.json'
 
 if not arquivo.arquivoexiste(arq):
     arquivo.criarArquivo(arq)

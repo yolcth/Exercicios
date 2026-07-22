@@ -25,7 +25,6 @@ def lerArquivo(nome):
     try:
         with open(nome, 'r') as a:
             dados = json.load(a)
-            
         for pessoa in dados:
             print(f"{pessoa['nome']:<30}{pessoa['idade']:>3} anos.")
     except:
@@ -33,21 +32,10 @@ def lerArquivo(nome):
 
 
 def cadastrar(arq, nome='desconhecido', idade=0):
-
-    # try:      <-- Comente com #
-    # Passo 1: Ler a lista de pessoas que já existem
     with open(arq, 'r') as a:
         lista_pessoas = json.load(a)
-        
-    # Passo 2: Criar o dicionário do novo usuário e colocar na lista
     nova_pessoa = {'nome': nome, 'idade': idade}
     lista_pessoas.append(nova_pessoa)
-    
-    # Passo 3: Salvar a lista atualizada de volta no arquivo
     with open(arq, 'w') as a:
         json.dump(lista_pessoas, a, indent=4)
-            
-    # except:   <-- Comente com #
-    #     print(f'Houve um erro...')
-    # else:     <-- Comente com #
     print(f'Novo registro de {nome} adicionado.')
