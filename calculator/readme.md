@@ -1,6 +1,6 @@
 # 🧮 Calculadora Simples em Python
 
-Uma calculadora em linha de comando (CLI) desenvolvida em Python que realiza operações matemáticas básicas e avançadas.
+Uma calculadora em linha de comando (CLI) desenvolvida em Python que realiza operações matemáticas básicas.
 
 ## 📌 Funcionalidades
 
