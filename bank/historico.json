@@ -3,7 +3,7 @@
         "nome": "Matheus",
         "idade": 20,
         "senha": "1101",
-        "saldo": 100.0
+        "saldo": 90.0
     },
     {
         "nome": "Vinicius",
@@ -16,5 +16,11 @@
         "idade": 21,
         "senha": "pump",
         "saldo": 30.0
+    },
+    {
+        "nome": "Pietro",
+        "idade": 60,
+        "senha": "pietro0303",
+        "saldo": 600.0
     }
 ]

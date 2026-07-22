@@ -62,6 +62,7 @@ try:
                     elif escolha == 3:
                         
                         retirar = util.retirar_dinheiro(conta['saldo'])
+                        conta['saldo'] -= retirar
                         if retirar > conta['saldo']:
                             print('Erro, Não dá para retirar esse valor.')
                         else:
@@ -75,19 +76,24 @@ try:
                             sleep(0.5)   
 
                     elif escolha == 4:
-                        saldo_inicial = util.transferencia(conta['saldo'])
+                        novo_saldo = util.transferencia(conta['saldo'])
+                        if novo_saldo is not None:
+                            conta['saldo'] = novo_saldo
                         with open(arquivo, 'r') as a:
                             dados = json.load(a)
                         for usuario_dados in dados:
                             if usuario_dados['nome'] == conta['nome']:
-                                usuario_dados['saldo'] -= saldo_inicial
+                                usuario_dados['saldo'] -= novo_saldo
                         with open(arquivo, 'w') as a:
                             json.dump(dados, a, indent=4)
-                        
-                        
+
+                    elif escolha == 5:
+                        break
+
+                    else:
+                        print('Número inválido.')
             elif logado == False:
                 print('Não encontramos a conta. Nome ou senha inválidos.\n')
                 break
 except:
     print('\033[31mErro. Houve algum erro no programa.\033[m')
-    

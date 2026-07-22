@@ -37,17 +37,16 @@ def retirar_dinheiro(saldo_inicial):
 
 def transferencia(saldo_inicial):
     print(f'Para realizar uma transferência, você tem que estar ciente do seu saldo atual. Sendo ele de: {saldo_inicial}R$\n')
-    transferencia = float(input('Primeiro digite a quantia da transferência e se o valor for válido iremos continuar: R$'))
+    valor = float(input('Primeiro digite a quantia da transferência e se o valor for válido iremos continuar: R$'))
 
-    if transferencia > saldo_inicial:
+    if valor > saldo_inicial:
         print('Operação inválida, você tentou transferir mais dinheiro do que tem atualmente. Tente novamente. \n')
+        return None
 
-    else:
-        if saldo_inicial >= transferencia:
-            pix = input(f'Tudo certo, agora você precisa digitar o nome completo da pessoa que deseja transferir a quantia de {transferencia}: ')
-            saldo_inicial -= transferencia
-            sleep(0.5)
-            print('\nCarregando e fazendo a transferência..\n'); sleep(0.5)
-            print('...'); sleep(0.5)
-            print(f'Pronto! transferência realizada para {pix} com sucesso! Seu saldo atual é de {saldo_inicial}. \n')
-    return saldo_inicial
+    pix = input(f'Tudo certo, agora você precisa digitar o nome completo da pessoa que deseja transferir a quantia de {valor}: ')
+    novo_saldo = saldo_inicial - valor
+    sleep(0.5)
+    print('\nCarregando e fazendo a transferência..\n'); sleep(0.5)
+    print('...'); sleep(0.5)
+    print(f'Pronto! transferência realizada para {pix} com sucesso! Seu saldo atual é de {saldo_inicial}. \n')
+    return novo_saldo

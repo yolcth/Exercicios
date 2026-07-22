@@ -1,5 +1,6 @@
 import json; from uteis import interface
 
+
 def cadastrar(arquivo, nome, idade, senha):
         interface.texto('Seu Cadastro')
         saldo = 0 
