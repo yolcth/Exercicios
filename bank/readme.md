@@ -15,3 +15,9 @@ Um sistema de simulação bancária em linha de comando (CLI) feito em Python, c
     
 * **Python 3**
 * **JSON** (para armazenamento dos dados)
+
+## 🚀 Como Executar
+
+1. Acesse a pasta do projeto:
+   ```bash
+   cd bank
