@@ -23,7 +23,7 @@ try:
                 print('Você é menor de idade. Não pode se cadastrar.')
                 break
             senha = str(input('Digite a sua senha: '))
-            cadastro.cadastrar(arquivo, nome, idade, senha)
+            cadastro.cadastrar(arquivo, nome, idade, senha) # passando todos os parametros
         elif situacao == 3:
             print('Até logo.')
             break
@@ -52,22 +52,22 @@ try:
                         deposito = util.depositar_dinheiro(conta['saldo'])
                         conta['saldo'] += deposito
                         with open(arquivo, 'r') as a:
-                            dados = json.load(a)
+                            dados = json.load(a) # lendo todos os arquivos e fechando o Json
                         for usuario_dados in dados:
                             if usuario_dados['nome'] == conta['nome']:
                                 usuario_dados['saldo'] = conta['saldo']
                         with open(arquivo, 'w') as a:
-                            json.dump(dados, a, indent=4)
+                            json.dump(dados, a, indent=4) # reescrever os novos dados
 
                     elif escolha == 3:
                         
                         retirar = util.retirar_dinheiro(conta['saldo'])
-                        conta['saldo'] -= retirar
+                        conta['saldo'] -= retirar # o saldo da conta vai ser o saldo menos o valor retirado
                         if retirar > conta['saldo']:
                             print('Erro, Não dá para retirar esse valor.')
                         else:
                             with open(arquivo, 'r') as a:
-                                dados = json.load(a)
+                                dados = json.load(a) 
                             for usuario_dados in dados:
                                 if usuario_dados['nome'] == conta['nome']:
                                     usuario_dados['saldo'] -= retirar
@@ -77,8 +77,8 @@ try:
 
                     elif escolha == 4:
                         novo_saldo = util.transferencia(conta['saldo'])
-                        if novo_saldo is not None:
-                            conta['saldo'] = novo_saldo
+                        if novo_saldo is not None: # se novo saldo não for retornado em None (nada)
+                            conta['saldo'] = novo_saldo 
                         with open(arquivo, 'r') as a:
                             dados = json.load(a)
                         for usuario_dados in dados:
@@ -95,5 +95,5 @@ try:
             elif logado == False:
                 print('Não encontramos a conta. Nome ou senha inválidos.\n')
                 break
-except:
-    print('\033[31mErro. Houve algum erro no programa.\033[m')
+except (ValueError, NameError, LookupError, FileNotFoundError, json.JSONDecodeError) as e:
+    print(f"\033[31mExceção na Transferência: {e} ({type(e).__name__})\033[m") # para ver o nome do erro no terminal

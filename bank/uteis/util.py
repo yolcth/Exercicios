@@ -8,13 +8,11 @@ def menu():
 
 def options():
     menu = [
-        
         '1 - Ver Saldo na conta',
         '2 - Depositar dinheiro na conta',
         '3 - Retirar dinheiro da conta',
         '4 - Realizar uma transferência',
         '5 - Sair'
-        
     ]
     for i in menu:
         print(i)
