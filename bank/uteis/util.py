@@ -13,7 +13,8 @@ def options():
         '2 - Depositar dinheiro na conta',
         '3 - Retirar dinheiro da conta',
         '4 - Realizar uma transferência',
-        '5 - Sair'
+        '5 - Ver Histórico de transações',
+        '6 - Sair'
     ]
     for i in menu:
         print(i)
@@ -51,3 +52,4 @@ def transferencia(saldo_inicial):
     print('...'); sleep(0.5)
     print(f'Pronto! transferência realizada para {pix} com sucesso! O seu saldo foi atualizado!. \n')
     return novo_saldo
+

@@ -1,26 +1,22 @@
 [
     {
         "nome": "Matheus",
-        "idade": 20,
+        "idade": 22,
         "senha": "1101",
-        "saldo": 175.5
-    },
-    {
-        "nome": "Vinicius",
-        "idade": 19,
-        "senha": "helloprint",
-        "saldo": 150.0
-    },
-    {
-        "nome": "Daniel",
-        "idade": 21,
-        "senha": "pump",
-        "saldo": 30.0
-    },
-    {
-        "nome": "Pietro",
-        "idade": 60,
-        "senha": "pietro0303",
-        "saldo": 600.0
+        "saldo": 320.0,
+        "transacao": [
+            {
+                "tipo": "deposito",
+                "valor": 100.0
+            },
+            {
+                "tipo": "deposito",
+                "valor": 120.0
+            },
+            {
+                "tipo": "deposito",
+                "valor": 100.0
+            }
+        ]
     }
 ]

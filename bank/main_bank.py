@@ -79,6 +79,7 @@ while True:
                         for usuario_dados in dados:
                             if usuario_dados['nome'] == conta['nome']:
                                 usuario_dados['saldo'] = conta['saldo']
+                                usuario_dados['transacao'].append({'tipo':'deposito', 'valor':deposito})
                         with open(arquivo, 'w') as a:
                             json.dump(dados, a, indent=4) # reescrever os novos dados
                     except FileNotFoundError:

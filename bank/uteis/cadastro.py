@@ -4,10 +4,12 @@ import json; from uteis import interface
 def cadastrar(arquivo, nome, idade, senha):
         interface.texto('Seu Cadastro')
         saldo = 0 
+        transacao = [
+        ]
         with open(arquivo, 'r') as a:
             dados = json.load(a)
 
-        novo_cliente = {'nome': nome, 'idade': idade, 'senha': senha, 'saldo': saldo}
+        novo_cliente = {'nome': nome, 'idade': idade, 'senha': senha, 'saldo': saldo, 'transacao': []}
         dados.append(novo_cliente)
 
         with open(arquivo, 'w') as a:
